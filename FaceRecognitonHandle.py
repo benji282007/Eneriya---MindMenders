@@ -4,14 +4,14 @@ import face_recognition
 
 
 # Camera initialization
-cam = cv2.VideoCapture(1,cv2.CAP_DSHOW)
+cam = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 
 
 MODEL = "hog"
 
 knownFacesDir = "KnownFaces"
 sampleImagePath = "UnknownFaces/" 
-Tolerence = 0.6
+Tolerence = 0.4
 
 knownFaces = []
 knownNames = []
@@ -31,8 +31,8 @@ def LoadFaces():
                  print(f"failed to recognize:{knownFacesDir}/{name}/{filename}")
 
 def RecognizeFace(img,frame):
-    locations = face_recognition.face_locations(img)
-    encodings = face_recognition.face_encodings(img)
+    locations = face_recognition.face_locations(img,model=MODEL)
+    encodings = face_recognition.face_encodings(img,model=MODEL)
 
     for encoding,location in zip(encodings,locations):
        
@@ -45,7 +45,9 @@ def RecognizeFace(img,frame):
            identity = knownNames[detection.index(True)]
            print(f"Match Found {identity}")
            cv2.rectangle(frame,top_left,bottom_right,color,2)
-        
+       else:
+            print("Unknown")
+            cv2.rectangle(frame,top_left,bottom_right,(0,0,255),2)
 
 
 LoadFaces()
