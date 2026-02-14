@@ -1,0 +1,23 @@
+{
+    "users": [],
+    "people": [
+        {
+            "name": "Benjamin Chacko",
+            "relation": "Son",
+            "notes": "Hi I am your son",
+            "image": "images/ma_kb_1771058034.jpg"
+        },
+        {
+            "name": "Athulraj",
+            "relation": "Brother",
+            "notes": "",
+            "image": "images/ma_kb_1771058210.jpg"
+        },
+        {
+            "name": "Aron",
+            "relation": "Brother",
+            "notes": "",
+            "image": "images/ma_kb_1771058455.jpg"
+        }
+    ]
+}

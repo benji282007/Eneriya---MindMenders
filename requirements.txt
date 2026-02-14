@@ -1,0 +1,11 @@
+# Core app
+customtkinter
+Pillow
+opencv-python
+
+# Memory Assistant (face recognition + AI + voice)
+numpy
+face_recognition
+ollama
+SpeechRecognition
+PyAudio
